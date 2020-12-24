@@ -4,7 +4,7 @@
 * Elasticsearch kümeniz için kimlik doğrulaması ayarlamanıza, farklı kimlik bilgilerine ve farklı erişim düzeylerine sahip farklı kullanıcılar oluşturmanıza olanak tanır.
 Aynı zamanda farklı roller oluşturmanıza ve benzer kullanıcıları aynı role atamanıza olanak tanır 
 
-* ElasticStack'in 'ün 4 farklı türde lisansa sahiptir.
+* ElasticStack 4 farklı türde lisansa sahiptir.
     * Open Source
     * Basic
     * Gold 
@@ -12,8 +12,8 @@ Aynı zamanda farklı roller oluşturmanıza ve benzer kullanıcıları aynı ro
   
 * Güvenlik 6.8 sürümünden itibaren temel lisans altında sağlanmıştır.
 
-* X-Pack güvenliğini etkinleştirmek için elasticsearch ve kibana hizmetlerimizi özelleştirmemiz gerekecek. elasticsearch.yml
-Elasticsearch ayarları dosya yoluyla özelleştirilebilir ve Kibana ayarları kibana.ymldosya yoluyla özelleştirilebilir . Docker'ı kullanırken bunu değiştirmenin birçok yolu vardır. Ortam değişkenlerini docker-compose.yml 
+* X-Pack güvenliğini etkinleştirmek için elasticsearch ve kibana hizmetlerimizi özelleştirmemiz gerekecek. 
+Elasticsearch ayarları dosya yoluyla özelleştirilebilir ve Kibana ayarları kibana.yml dosya yoluyla özelleştirilebilir . Docker kullanırken bunu değiştirmenin birçok yolu vardır. Ortam değişkenlerini docker-compose.yml 
 dosyamız üzerinden geçirebiliriz . Bu normalde ideal bir yol olsa da, Elasticsearch ve Kibana env değişkenlerinin aktarılma şekli aynı değildir ve belirli dağıtım ortamlarında sorunlara neden olabilir.
 
 * docker-compose.yml dosyamızla aynı dizinde bulunan kibana.yml ve elasticsearch.yml oluşturuyoruz.
@@ -101,11 +101,11 @@ dosyamız üzerinden geçirebiliriz . Bu normalde ideal bir yol olsa da, Elastic
    
  * elasticsearch.yl güncellemesinden sonra "docker-compose up" ile tekrar containerları ayağa kaldırıyoruz.
  
- * Şimdi serfikaları oluşturmaya başlayacağız. Container'lar ayaktayken aşağıdaki komutu farklı terminal pencerisinde çalıştırarak kontiner içerisine giriyoruz.
+ * Şimdi serfikaları oluşturmaya başlayacağız. Container'lar ayaktayken aşağıdaki komutu farklı terminal pencerisinde çalıştırarak container içerisine giriyoruz.
  
        docker-compose exec elasticsearch bash
  
- * Ardından kontainer içerisinde aşağıdaki komutu çalıştırıyoruz.Bu komut sonrasında, ne yapacağını açıklayan bazı uyarılar oluşturacaktır. Ve sizden dosya adı ve şifre isteyecektir. Devam etmek için ENTER'a basmanız yeterlidir. Ana dizinde "elastic-stack-ca.p12" dosyasını oluşturacaktır. Bu, sertifikayı oluşturmak için kullanacağımız sertifika yetkisidir
+ * Ardından kontainer içerisinde aşağıdaki komutu çalıştırıyoruz.Bu komut sonrasında, ne yapacağını açıklayan bazı uyarılar oluşturacaktır. Ve sizden dosya adı ve şifre isteyecektir. Devam etmek için ENTER'a basmanız yeterlidir. Ana dizinde "elastic-stack-ca.p12" dosyasını oluşturacaktır. Bu, sertifikayı oluşturmak için kullanacağımız sertifika yetkisidir.
  
        bin/elasticsearch-certutil ca
  
@@ -178,6 +178,7 @@ Bunun için ana makine dışına aşağıdaki komutlar ile kopyalıyoruz. Kopyal
         networks:
           elknetwork:
             driver: bridge
+
    * elasticsearch.yml:
             
          cluster.name: my-elasticsearch-cluster
