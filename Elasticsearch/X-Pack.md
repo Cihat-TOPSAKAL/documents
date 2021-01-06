@@ -214,8 +214,8 @@ Bunun için ana makine dışına aşağıdaki komutlar ile kopyalıyoruz. Kopyal
      * logstash.yml
 
            xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
-           xpack.monitoring.elasticsearch.username: "elastic"
-           xpack.monitoring.elasticsearch.password: "<elastic password>"
+           xpack.monitoring.elasticsearch.username: logstash
+           xpack.monitoring.elasticsearch.password: "<logstash password>"
 
 * Ardından tekrar komutunu yürütün.
 
